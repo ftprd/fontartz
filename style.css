@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #000;
+  overflow: hidden;
+}
+
+html {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  background-color: #fff;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6666666667), rgba(0, 0, 0, 0));
+  z-index: 99;
+}
+header a.header_logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 50px;
+  padding-bottom: 10px;
+  font-size: 2.2rem;
+  font-family: serif;
+  color: #fff;
+  font-style: italic;
+}
+header a.header_logo span {
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+p.ttl {
+  display: block;
+  text-align: center;
+  margin-top: 80px;
+  font-size: 2.5rem;
+  font-family: serif;
+  font-weight: 900;
+}
+
+main {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+main section.main {
+  width: 50%;
+}
+main section.main input {
+  position: relative;
+  display: block;
+  width: 95%;
+  height: 30px;
+  margin-inline: auto;
+  border: none;
+  outline: none;
+  padding-inline: 1em;
+  border-bottom: 1px solid #aaa;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  font-family: sans-serif;
+  transition: all 0.2s ease-out;
+}
+main section.main input:focus {
+  border-bottom: 1px solid #55f;
+}
+main section.main canvas {
+  background-color: #f88;
+  display: none;
+}
+main section.main .imgscroll {
+  display: block;
+  width: 95%;
+  margin-inline: auto;
+  overflow-x: auto;
+  border: 1px solid #aaa;
+  padding-block: 2rem;
+  background-image: url(img/transparent_bg.png);
+  background-color: rgba(255, 255, 255, 0.6666666667);
+  background-blend-mode: lighten;
+  background-size: auto 150%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  border-radius: 0 5px 5px 5px;
+}
+main section.main .imgscroll img {
+  display: block;
+  margin-inline: auto;
+}
+main section.main .imgscroll::-webkit-scrollbar {
+  height: 8px;
+}
+main section.main .imgscroll::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+main section.main .imgscroll::-webkit-scrollbar-thumb {
+  background-color: #666;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background-clip: padding-box;
+}
+main section.main .imgscroll::-webkit-scrollbar-thumb:hover {
+  background-color: #444;
+}
+main section.main a.main_download {
+  position: relative;
+  display: block;
+  width: 30%;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: #fff;
+  margin-left: calc(2.5% - 1px);
+  border-top: 1px solid #aaa;
+  border-inline: 1px solid #aaa;
+  border-radius: 5px 5px 0 0;
+  z-index: 1;
+  transition: all 0.2s ease-out;
+}
+main section.main a.main_download svg {
+  width: 24px;
+  fill: #000;
+  z-index: 1;
+  transition: all 0.2s ease-out;
+}
+main section.main a.main_download span {
+  font-size: 1.3rem;
+  font-family: serif;
+  font-weight: bold;
+  translate: 0 2px;
+  z-index: 1;
+  transition: all 0.2s ease-out;
+}
+main section.main a.main_download:hover {
+  background-color: #aaa;
+}
+main section.main a.main_download:hover svg {
+  fill: #fff;
+}
+main section.main a.main_download:hover span {
+  color: #fff;
+}
+main section.settings {
+  width: 30%;
+}
+main section.settings div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 50px;
+}
+main section.settings div * {
+  display: block;
+  border-radius: 0;
+  outline: none;
+}
+main section.settings div p {
+  width: 5rem;
+  text-align: right;
+  font-size: 1.5rem;
+  font-family: serif;
+  font-weight: 700;
+  letter-spacing: 0em;
+}
+main section.settings div span {
+  font-family: "roboto mono", sans-serif;
+  line-height: 1em;
+  font-size: 0.9rem;
+}
+main section.settings div input[type=number] {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #aaa;
+  padding-inline: 0.5em;
+  text-align: center;
+  font-size: 1rem;
+  font-family: sans-serif;
+}
+main section.settings div input[type=number]::-webkit-inner-spin-button, main section.settings div input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  -moz-appearance: textfield;
+}
+main section.settings div select {
+  width: 120px;
+  height: 40px;
+  border: 1px solid #aaa;
+  padding-inline: 0.5em;
+  cursor: s-resize;
+}
+main section.settings div input[type=color] {
+  width: 100px;
+  height: 30px;
+  border: 1px solid #aaa;
+  padding-inline: 0.1em;
+  cursor: pointer;
+}
+main section.settings div input[type=checkbox] {
+  width: 20px;
+  aspect-ratio: 1;
+  border: 1px solid #aaa;
+  cursor: pointer;
+}
+main section.settings .setShadow {
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s linear;
+}
+main section.settings .setShadow div {
+  height: 30px;
+}
+main section.settings .setShadow div p {
+  font-size: 1rem;
+}
+main section.settings .setShadow div input {
+  height: 20px;
+  font-size: 0.9rem;
+}
+main section.settings:has(#setShadow:checked) .setShadow {
+  opacity: 1;
+  pointer-events: all;
+}
+
+@media (max-width: 800px) {
+  main {
+    margin-block: 30px 100px;
+    display: block;
+  }
+  main section.main {
+    width: 80%;
+    margin-inline: auto;
+  }
+  main section.main .imgscroll {
+    height: 250px;
+    overflow: auto;
+  }
+  main section.settings {
+    margin-top: 2rem;
+    width: 80%;
+    margin-inline: auto;
+  }
+  main section.settings div select {
+    width: 120px;
+  }
+}/*# sourceMappingURL=style.css.map */
